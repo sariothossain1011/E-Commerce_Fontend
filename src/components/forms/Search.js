@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useSearch } from "../../context/search";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Search=()=> {
   // hooks
@@ -23,16 +24,16 @@ const Search=()=> {
     <form className="d-flex" onSubmit={handleSubmit}>
       <input
         type="search"
-        style={{ borderRadius: "0px" }}
-        className="form-control"
+        style={{ borderRadius: "0px" ,height:"40px"}}
+        className="form-control mt-2"
         placeholder="Search"
         onChange={(e) => setValues({ ...values, keyword: e.target.value })}
         value={values.keyword}
       />
       <button
-        className="btn btn-outline-primary"
+        className="btn btn-outline-primary mt-2"
         type="submit"
-        style={{ borderRadius: "0px" }}
+        style={{ borderRadius: "0px" ,height:"40px"}}
       >
         Search
       </button>

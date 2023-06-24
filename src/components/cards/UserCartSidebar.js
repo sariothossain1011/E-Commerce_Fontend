@@ -6,12 +6,13 @@ import axios from "axios";
 import DropIn from "braintree-web-drop-in-react";
 import toast from "react-hot-toast";
 
-const UserCartSidebar=()=> {
+const UserCartSidebar = () => {
   // context
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
   // state
   const [clientToken, setClientToken] = useState("");
+  // alert(clientToken)
   const [instance, setInstance] = useState("");
   const [loading, setLoading] = useState(false);
   // hooks
@@ -53,7 +54,7 @@ const UserCartSidebar=()=> {
         nonce,
         cart,
       });
-        console.log("handle buy response => ", data);
+      console.log("handle buy response => ", data);
       setLoading(false);
       localStorage.removeItem("cart");
       setCart([]);
@@ -116,9 +117,9 @@ const UserCartSidebar=()=> {
             <DropIn
               options={{
                 authorization: clientToken,
-                paypal: {
-                  flow: "vault",
-                },
+                // paypal: {
+                //   flow: "vault",
+                // },
               }}
               onInstance={(instance) => setInstance(instance)}
             />
@@ -134,6 +135,6 @@ const UserCartSidebar=()=> {
       </div>
     </div>
   );
-}
+};
 
 export default UserCartSidebar;

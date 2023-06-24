@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 const Register=()=> {
   // state
-  const [name, setName] = useState("Faisal ahmed");
-  const [email, setEmail] = useState("faisal@gmail.com");
-  const [password, setPassword] = useState("MArt@msb2020");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // hooks
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
@@ -25,8 +25,7 @@ const Register=()=> {
           password,
         }
       );
-      console.log(data);
-     
+      // console.log(data);
       if (data?.error) {
         toast.error(data.error);
       } else {
@@ -36,7 +35,7 @@ const Register=()=> {
         navigate("/dashboard/user");
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error("Registration failed. Try again.");
     }
   };
@@ -74,7 +73,7 @@ const Register=()=> {
               />
 
               <button className="btn btn-primary" type="submit">
-                Submit
+                registration
               </button>
             </form>
           </div>

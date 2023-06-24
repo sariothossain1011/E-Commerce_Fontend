@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LoadingGIF from "../../images/loading.gif";
 
-const Loading = ({ path = "login" })=> {
+const Loading = ({ path = "login" }) => {
   // state
   const [count, setCount] = useState(3);
   // hooks
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,6 +31,6 @@ const Loading = ({ path = "login" })=> {
       <img src={LoadingGIF} alt="Loading" style={{ width: "400px" }} />
     </div>
   );
-}
+};
 
 export default Loading;

@@ -9,7 +9,7 @@ import { Select } from "antd";
 
 const { Option } = Select;
 
-const AdminOrders=()=> {
+const AdminOrders = () => {
   // context
   const [auth, setAuth] = useAuth();
   // state
@@ -72,8 +72,8 @@ const AdminOrders=()=> {
                         <th scope="col">#</th>
                         <th scope="col">Status</th>
                         <th scope="col">Buyer</th>
-                        <th scope="col">Ordered</th>
-                        <th scope="col">Payment</th>
+                        <th scope="col" className="hide-div">Ordered</th>
+                        <th scope="col" className="hide-div">Payment</th>
                         <th scope="col">Quantity</th>
                       </tr>
                     </thead>
@@ -94,8 +94,8 @@ const AdminOrders=()=> {
                           </Select>
                         </td>
                         <td>{o?.buyer?.name}</td>
-                        <td>{moment(o?.createdAt).fromNow()}</td>
-                        <td>{o?.payment?.success ? "Success" : "Failed"}</td>
+                        <td className="hide-div">{moment(o?.createdAt).fromNow()}</td>
+                        <td className="hide-div">{o?.payment?.success ? "Success" : "Failed"}</td>
                         <td>{o?.products?.length} products</td>
                       </tr>
                     </tbody>
@@ -116,6 +116,6 @@ const AdminOrders=()=> {
       </div>
     </>
   );
-}
+};
 
 export default AdminOrders;

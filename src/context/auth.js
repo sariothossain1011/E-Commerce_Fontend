@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
   });
   
   // axios config
-  axios.defaults.baseURL = process.env.REACT_APP_API;
+  axios.defaults.baseURL = 'http://localhost:8080/api/v1';
   axios.defaults.headers.common["Authorization"] = auth?.token;
   
   useEffect(() => {

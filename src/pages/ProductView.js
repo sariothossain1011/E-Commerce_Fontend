@@ -66,7 +66,7 @@ const ProductView=()=> {
                 color="green"
               >
                 <img
-                  className="card-img-top"
+                  className="card-img-top img-fluid img-thumbnail"
                   src={`${process.env.REACT_APP_API}/product/photo/${product._id}`}
                   alt={product.name}
                   style={{ height: "500px", width: "100%", objectFit: "cover" }}

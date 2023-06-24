@@ -166,7 +166,7 @@ const AdminProduct=()=> {
             />
 
             <button onClick={handleSubmit} className="btn btn-primary mb-5">
-              Submit
+              save
             </button>
           </div>
         </div>

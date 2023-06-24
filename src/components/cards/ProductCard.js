@@ -3,28 +3,29 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart";
 
-const  ProductCard=({ p })=> {
+const ProductCard = ({ p }) => {
   // context
   const [cart, setCart] = useCart();
   // hooks
   const navigate = useNavigate();
 
   return (
-    <div className="card mb-3 hoverable">
+    <div className="card mb-3 container p-4">
       <Badge.Ribbon text={`${p?.sold} sold`} color="red">
         <Badge.Ribbon
-          text={`${p?.quantity >= 1
+          text={`${
+            p?.quantity >= 1
               ? `${p?.quantity - p?.sold} in stock`
               : "Out of stock"
-            }`}
+          }`}
           placement="start"
           color="green"
         >
           <img
-            className="card-img-top"
+            className="card-img-top img-fluid img-thumbnail"
             src={`${process.env.REACT_APP_API}/product/photo/${p._id}`}
             alt={p.name}
-            style={{ height: "300px", objectFit: "cover" }}
+            style={{ objectFit: "cover" }}
           />
         </Badge.Ribbon>
       </Badge.Ribbon>
@@ -42,9 +43,9 @@ const  ProductCard=({ p })=> {
         <p className="card-text">{p?.description?.substring(0, 60)}...</p>
       </div>
 
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between gap-5 mb-2">
         <button
-          className="btn btn-primary col card-button"
+          className="btn btn-outline-primary col card-button"
           style={{ borderBottomLeftRadius: "5px" }}
           onClick={() => navigate(`/product/${p.slug}`)}
         >
@@ -68,6 +69,6 @@ const  ProductCard=({ p })=> {
       <p>{p.sold} sold</p> */}
     </div>
   );
-}
+};
 
 export default ProductCard;

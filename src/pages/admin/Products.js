@@ -18,7 +18,7 @@ const AdminProducts=()=> {
 
   const loadProducts = async () => {
     try {
-      const { data } = await axios.get("/products");
+      const  {data}  = await axios.get("/products");
       setProducts(data);
     } catch (err) {
       console.log(err);
@@ -42,6 +42,7 @@ const AdminProducts=()=> {
 
             {products?.map((p) => (
               <Link
+              className="text-decoration-none"
                 key={p._id}
                 to={`/dashboard/admin/product/update/${p.slug}`}
               >

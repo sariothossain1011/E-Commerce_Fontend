@@ -7,8 +7,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Login=()=> {
   // state
-  const [email, setEmail] = useState("faisal@gmail.com");
-  const [password, setPassword] = useState("MArt@msb2020");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // hook
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Login=()=> {
         email,
         password,
       });
-      console.log(data);
+      // console.log(data);
       if (data?.error) {
         toast.error(data.error);
       } else {
@@ -35,7 +35,7 @@ const Login=()=> {
         );
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error("Login failed. Try again.");
     }
   };
@@ -65,7 +65,7 @@ const Login=()=> {
               />
 
               <button className="btn btn-primary" type="submit">
-                Submit
+                login
               </button>
             </form>
           </div>

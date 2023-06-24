@@ -30,7 +30,7 @@ const PageNotFound = () => {
   );
 };
 
-const App=()=> {
+const App = () => {
   return (
     <BrowserRouter>
       <Menu />
@@ -44,7 +44,7 @@ const App=()=> {
         <Route path="/search" element={<Search />} />
         <Route path="/product/:slug" element={<ProductView />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/registration" element={<Register />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
           <Route path="user/profile" element={<UserProfile />} />
@@ -66,6 +66,6 @@ const App=()=> {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

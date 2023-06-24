@@ -73,3 +73,11 @@
     background-position: 0% 50%;
   }
 }
+
+
+
+@media (max-width:500px) {
+  .hide-div{
+      display: none;
+  }
+}
