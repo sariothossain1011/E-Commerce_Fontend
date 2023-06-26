@@ -25,7 +25,7 @@ const ProductCard = ({ p }) => {
             className="card-img-top img-fluid img-thumbnail"
             src={`${process.env.REACT_APP_API}/product/photo/${p._id}`}
             alt={p.name}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover" , height: "350px",}}
           />
         </Badge.Ribbon>
       </Badge.Ribbon>
@@ -33,14 +33,14 @@ const ProductCard = ({ p }) => {
       <div className="card-body">
         <h5>{p?.name}</h5>
 
-        <h4 className="fw-bold">
+        <h5 className="fw-bold">
           {p?.price?.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
           })}
-        </h4>
+        </h5>
 
-        <p className="card-text">{p?.description?.substring(0, 60)}...</p>
+        <span className="card-text">{p?.description?.substring(0, 60)}...</span>
       </div>
 
       <div className="d-flex justify-content-between gap-5 mb-2">

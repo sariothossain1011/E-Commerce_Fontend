@@ -52,7 +52,14 @@ const AdminProducts=()=> {
                       <img
                         src={`${process.env.REACT_APP_API}/product/photo/${p._id}`}
                         alt={p.name}
-                        className="img img-fluid rounded-start"
+                        // className="img img-fluid rounded-start"
+                        style={{
+                          height: "200px",
+                          width: "200px",
+                          objectFit: "cover",
+                          // marginLeft: "-12px",
+                          borderRopRightRadius: "0px",
+                        }}
                       />
                     </div>
 
